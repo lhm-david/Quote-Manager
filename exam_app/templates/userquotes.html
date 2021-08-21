@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Quotes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h3>{{user.first_name}} {{user.last_name}}' Quotes</h3>
+        <div class="option">
+            <a href="/success">Back</a>
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </div>
+    <div class="allQuotes">
+        {% for quote in this_user_quotes %}
+        <div class="quote">
+            <p>{{quote.author}}: {{quote.quote_content}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

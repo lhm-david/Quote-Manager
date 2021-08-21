@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Web Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body>
+    <div class="message">
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <div class="wrapper">
+        <div class="body">
+            <form action="/register" method="POST">
+                {% csrf_token %}
+                <h3>Register</h3>
+                <h4>First Name: <input type="text" name="first_name"></h4>
+
+                <h4>Last Name: <input type="text" name="last_name"></h4>
+
+                <h4>Email: <input type="text" name="email"></h4>
+
+                <h4>Password: <input type="text" name="password"></h4>
+                <h6>Password should be at least 8 characters</h6>
+
+                <h4>Confirm password: <input type="text" name="passwordConfirm"></h4>
+
+                <button class="button">Register</button>
+            </form>
+        </div>
+        <div class="body">
+            <form action="/login" method="POST">
+                {% csrf_token %}
+                <h3>Login</h3>
+                <h4>Email: <input type="text" name="email"></h4>
+                
+                <h4>Password: <input type="text" name="password"></h4>
+                
+                <button class="button">Log in</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

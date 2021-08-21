@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.message {
+    color:red
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 900px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.body{
+    padding:30px;
+}
+
+.body h3{
+    text-align: center;
+}
+
+.header {
+    margin: 0 auto;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quote{
+    border: 2px solid black;
+    width: 300px;
+    font-size: large;
+    text-align: left;
+    margin-top: 10px;
+    padding:10px
+}
+
+.allQuotes{
+    text-align: center;
+    padding: 50px;
+}
+
+.addQuote{
+    margin-left:150px;
+    text-align: center;
+    padding: 50px;
+}
+
+.form{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px
+}
+
+.form2{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    height: 50px;
+}
+
+.edit{
+    margin: 0 auto;
+    width: 900px;
+    padding: 50px;
+    
+}
+
+.button{
+    margin-top: 20px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eidt Account</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        <h3>Edit My Account</h3>
+        <div class="option">
+            <a href="/success">Back</a>
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </div>
+
+
+    <form action="/myaccount/{{user.id}}/update" method="POST">
+        {% csrf_token %}
+        <div class="edit">
+            <h4>First Name:</h4>
+            <input type="text" name="first_name">
+            <h4>Last Name:</h4>
+            <input type="text" name="last_name">
+            <h4>Email:</h4>
+            <input type="text" name="email"><br>
+            <button class="button">Update</button>
+        </div>
+    </form>
+
+    <div class="message">
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+
+</html>
